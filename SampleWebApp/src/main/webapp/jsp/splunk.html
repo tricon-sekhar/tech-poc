@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/SampleWebApp/static/splunkjs/css/bootstrap.css"/>
+</head>
+
+<body>
+    <!-- Content -->
+
+    <script src="/SampleWebApp/static/splunkjs/config.js"></script>
+
+    <script>
+        splunkjs.config({
+            //proxyPath:  Proxy server path,
+            authenticate: function(done) {
+                // TO DO: Custom authentication function
+            },
+            onSessionExpired: function (authenticate, done) {
+                // TO DO: Custom session expiration function
+            },
+            onDrilldown: function(drilldown) {
+                // TO DO: Custom drilldown action
+            }
+        });
+
+        require.config({
+            baseUrl: static/
+        });
+
+        var deps = [
+            "splunkjs/ready!"
+            // Include additional components
+        ];
+        require(deps, function(mvc) {
+            // Load individual components
+            // Instantiate components
+        });
+    </script>
+
+</body>
+</html>
